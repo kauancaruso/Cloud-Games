@@ -10,5 +10,5 @@ for(var i = 0; i < linhasTabela.length; i++) {
 
     var calc_total = quantidade * valoruni;
 
-    linhasTabela[i].querySelector(".info-total").textContent = calc_total;
+    linhasTabela[i].querySelector(".info-total").textContent = "R$ " + calc_total;
 }
