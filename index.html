@@ -16,7 +16,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#encomendas">Encomendas</a></li>
-                    <li><a href="about.html">Sobre</a></li>
+                    <li><a href="#info-empresa">Sobre</a></li>
                     <li><a href="contact.html">Contato</a></li>
                 </ul>
             </nav>
@@ -24,7 +24,7 @@
     </header>
 
     <main>
-        <section id="encomendas"class="container">
+        <section id="encomendas" class="container">
             <div class="table-container">
                 <hr>
                 <h2 class="tit-enc">Encomendas</h2>
@@ -73,6 +73,59 @@
                 </table>
             </div>
         </section>
+
+        <section class="container">
+            <div class="table-container">
+                <hr>
+                <h2 class="tit-enc">Adicionar novas Encomendas</h2>
+                <hr>
+                <form id="form-encomenda">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="quantidade">Quantidade:</label>
+                            <input type="number" id="quantidade" name="quantidade" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="plat">Plataforma:</label>
+                            <select id="plat" name="plat" required>
+                                <option value="PlayStation 4">PlayStation 4</option>
+                                <option value="PlayStation 5">PlayStation 5</option>
+                                <option value="Xbox One">Xbox One</option>
+                                <option value="Xbox Series S/X">Xbox Series S/X</option>
+                                <option value="Nintendo Switch">Nintendo Switch</option>
+                                <option value="PC - Steam">PC - Steam</option>
+                                <option value="PC - Epic Games">PC - Epic Games</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="produto">Produto:</label>
+                            <select id="produto" name="produto" required>
+                                <option value="The Legend of Zelda: Breath of the Wild">The Legend of Zelda: Breath of the Wild</option>
+                                <option value="The Last of Us Part II">The Last of Us Part II</option>
+                                <option value="Red Dead Redemption 2">Red Dead Redemption 2</option>
+                                <option value="Grand Theft Auto V">Grand Theft Auto V</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="valor">Valor Unitário:</label>
+                            <input type="text" id="valor" name="valor" required>
+                        </div>
+                    </div>
+                    <button type="submit" id="adicionar-encomenda">Adicionar Encomenda</button>
+                </form>
+            </div>
+        </section>
+
     </main>
     <script src="assets/js/script.js"></script>
     <footer>

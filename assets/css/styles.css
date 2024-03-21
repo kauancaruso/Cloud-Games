@@ -79,3 +79,73 @@ th {
     color: white;
     background-color: #00173D;
 }
+
+.info-invalida{
+    background-color: red;
+}
+
+.info-textoinvalido {
+    color: red;
+}
+
+
+/* Estilos para a seção de adicionar encomendas */
+.container {
+    margin-top: 20px; /* Espaçamento entre as seções */
+}
+
+.container .table-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container .tit-enc {
+    text-align: center;
+}
+
+/* Estilos para os campos de entrada */
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .input-row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.container .input-group {
+    flex: 0 0 calc(33.33% - 10px);
+}
+
+.container .input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.container .input-group input,
+.container .input-group select {
+    width: 400px;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container button[type="submit"] {
+    width: 200px;
+    padding: 10px;
+    background-color: #00173D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container button[type="submit"]:hover {
+    background-color: #003b80;
+}
+
