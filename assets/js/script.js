@@ -75,7 +75,7 @@ botaoAdicionar.addEventListener("click", function(event) {
 
     if (!validarQuantidade(quantidade)) {
         colunaQuantidade.textContent = "QUANTIDADE INVÁLIDA!";
-        colunaQuantidade .style.color = "red";
+        colunaQuantidade.style.color = "red";
 
         // Adiciona todos os outros conteudos
         colunaNome.textContent = nome;
@@ -92,7 +92,14 @@ botaoAdicionar.addEventListener("click", function(event) {
         colunaJogo.textContent = produto;
         colunaPlataforma.textContent = plataforma;
         colunaQuantidade.textContent = quantidade;
-        colunaTotal.textContent = formValorMonetario(quantidade * parseFloat(valor));
+        colunaTotal.textContent = "-"
+
+        // Deixando todas as linhas em vermelho
+        colunaNome.classList.add("info-invalida");
+        colunaJogo.classList.add("info-invalida");
+        colunaPlataforma.classList.add("info-invalida");
+        colunaQuantidade.classList.add("info-invalida");
+        colunaTotal.classList.add("info-invalida");
     } else {
         // Se quantidade e valor unitário forem válidos,
         // Preencher as células com os valores dos campos do formulário
