@@ -112,3 +112,12 @@ botaoAdicionar.addEventListener("click", function(event) {
     }
 
 });
+
+// Adiciona um evento de escuta para cada linha da tabela
+linhasTabela.forEach(function(linha) {
+    // Adiciona um evento de escuta para duplo clique em cada linha
+    linha.addEventListener("dblclick", function() {
+        // Remove a linha da tabela
+        this.remove();
+    });
+});
