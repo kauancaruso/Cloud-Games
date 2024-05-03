@@ -54,12 +54,52 @@ var botaoAdicionar = document.querySelector("#adicionar-encomenda");
 botaoAdicionar.addEventListener("click", function(event) {
     event.preventDefault();
 
+    // Limpa a lista de erros antes de adicionar novos erros
+    var errorList = document.getElementById("error-list");
+    errorList.innerHTML = "";
+
     // Obter os valores dos campos do formulário
     var nome = document.querySelector("#nome").value;
-    var quantidade = document.querySelector("#quantidade").value;
+    var quantidadeInput = document.querySelector("#quantidade");
+    var quantidade = quantidadeInput.value;
     var plataforma = document.querySelector("#plat").value;
     var produto = document.querySelector("#produto").value;
-    var valor = document.querySelector("#valor").value;
+    var valorInput = document.querySelector("#valor");
+    var valor = valorInput.value;
+
+    // Função para adicionar um erro à lista de erros
+    function adicionarErro(mensagem) {
+        var listItem = document.createElement("li");
+        listItem.textContent = mensagem;
+        listItem.classList.add("error-message"); // Adiciona a classe de erro
+        errorList.appendChild(listItem);
+    }
+
+    // Lógica de validação para os campos do formulário
+    if (nome === "") {
+        adicionarErro("Por favor, preencha o nome.");
+    }
+    if (quantidade === "") {
+        adicionarErro("Por favor, preencha a quantidade.");
+    } else if (isNaN(quantidade) || parseInt(quantidade) <= 0) {
+        adicionarErro("A quantidade deve ser um número maior que zero.");
+    }
+    if (plataforma === "") {
+        adicionarErro("Por favor, selecione a plataforma.");
+    }
+    if (produto === "") {
+        adicionarErro("Por favor, selecione o produto.");
+    }
+    if (valor === "") {
+        adicionarErro("Por favor, preencha o valor unitário.");
+    } else if (isNaN(valor) || parseFloat(valor) <= 0 || !/\./.test(valor)) {
+        adicionarErro("O valor unitário deve ser um número maior que zero e conter '.' no lugar da ','");
+    }
+
+    // Se houver erros, sai da função
+    if (errorList.children.length > 0) {
+        return;
+    }
 
     // Criar uma nova linha na tabela
     var tabela = document.querySelector("table");
@@ -73,51 +113,26 @@ botaoAdicionar.addEventListener("click", function(event) {
     var colunaPreco = novaLinha.insertCell(4);
     var colunaTotal = novaLinha.insertCell(5);
 
-    if (!validarQuantidade(quantidade)) {
-        colunaQuantidade.textContent = "QUANTIDADE INVÁLIDA!";
-        colunaQuantidade.style.color = "red";
+    // Preencher as células com os valores dos campos do formulário
+    colunaNome.textContent = nome;
+    colunaJogo.textContent = produto;
+    colunaPlataforma.textContent = plataforma;
+    colunaQuantidade.textContent = quantidade;
+    colunaPreco.textContent = formValorMonetario(parseFloat(valor));
+    colunaTotal.textContent = formValorMonetario(quantidade * parseFloat(valor));
 
-        // Adiciona todos os outros conteudos
-        colunaNome.textContent = nome;
-        colunaJogo.textContent = produto;
-        colunaPlataforma.textContent = plataforma;
-        colunaPreco.textContent = formValorMonetario(parseFloat(valor));
-        colunaTotal.textContent = "-"
-    } else if (!validarValorUnitario(valor)) {
-        colunaPreco.textContent = "VALOR INVÁLIDO!";
-        colunaPreco.classList.add("info-invalida");
-
-        // Adiciona todos os outros conteudos
-        colunaNome.textContent = nome;
-        colunaJogo.textContent = produto;
-        colunaPlataforma.textContent = plataforma;
-        colunaQuantidade.textContent = quantidade;
-        colunaTotal.textContent = "-"
-
-        // Deixando todas as linhas em vermelho
-        colunaNome.classList.add("info-invalida");
-        colunaJogo.classList.add("info-invalida");
-        colunaPlataforma.classList.add("info-invalida");
-        colunaQuantidade.classList.add("info-invalida");
-        colunaTotal.classList.add("info-invalida");
-    } else {
-        // Se quantidade e valor unitário forem válidos,
-        // Preencher as células com os valores dos campos do formulário
-        colunaNome.textContent = nome;
-        colunaJogo.textContent = produto;
-        colunaPlataforma.textContent = plataforma;
-        colunaQuantidade.textContent = quantidade;
-        colunaPreco.textContent = formValorMonetario(parseFloat(valor));
-        colunaTotal.textContent = formValorMonetario(quantidade * parseFloat(valor));
-    }
-
+    // Limpar os campos do formulário após a adição à tabela
+    document.getElementById("nome").value = "";
+    quantidadeInput.value = "";
+    document.getElementById("plat").value = "";
+    document.getElementById("produto").value = "";
+    valorInput.value = "";
 });
 
-// Adiciona um evento de escuta para cada linha da tabela
+// Adicionando evento de duplo clique para excluir linhas da tabela
+var linhasTabela = document.querySelectorAll(".linhas");
 linhasTabela.forEach(function(linha) {
-    // Adiciona um evento de escuta para duplo clique em cada linha
     linha.addEventListener("dblclick", function() {
-        // Remove a linha da tabela
         this.remove();
     });
 });

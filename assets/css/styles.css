@@ -149,3 +149,6 @@ th {
     background-color: #003b80;
 }
 
+.error-message {
+    color: red;
+}
