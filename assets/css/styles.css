@@ -152,3 +152,18 @@ th {
 .error-message {
     color: red;
 }
+
+.fadeOut {
+    opacity: 0;
+    transition: 1s;
+}
+
+#filtrar-table {
+    width: 19.5%;
+    height: 35px;
+    margin-bottom: 10px;
+}
+
+.invisivel{
+    display: none;
+}
