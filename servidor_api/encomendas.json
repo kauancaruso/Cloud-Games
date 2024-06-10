@@ -1,0 +1,68 @@
+{
+    "encomendas_web": [
+        {
+            "nome": "Crishna",
+            "produto": "The Legend of Zelda: Breath of the Wild",
+            "plat": "Nintendo Switch",
+            "quantidade": 2,
+            "valor": 149.90,
+            "total": 0
+        },
+        {
+            "nome": "Thiago",
+            "produto": "The Last of Us Part II",
+            "plat": "PlayStation 4",
+            "quantidade": 2,
+            "valor": 119.90,
+            "total": 0
+        },
+        {
+            "nome": "Paulo",
+            "produto": "Grand Theft Auto V",
+            "plat": "PlayStation 5",
+            "quantidade": 3,
+            "valor": 99.90,
+            "total": 0
+        },
+        {
+            "nome": "Mariana",
+            "produto": "Red Dead Redemption 2",
+            "plat": "PlayStation 4",
+            "quantidade": 1,
+            "valor": 199.90,
+            "total": 0
+        },
+        {
+            "nome": "Fernando",
+            "produto": "Cyberpunk 2077",
+            "plat": "PC - Steam",
+            "quantidade": 2,
+            "valor": 159.90,
+            "total": 0
+        },
+        {
+            "nome": "Laura",
+            "produto": "Minecraft",
+            "plat": "Xbox One",
+            "quantidade": 1,
+            "valor": 99.90,
+            "total": 0
+        },
+        {
+            "nome": "Lucas",
+            "produto": "FIFA 22",
+            "plat": "PlayStation 5",
+            "quantidade": 2,
+            "valor": 249.90,
+            "total": 0
+        },
+        {
+            "nome": "Ana",
+            "produto": "Animal Crossing: New Horizons",
+            "plat": "Nintendo Switch",
+            "quantidade": 1,
+            "valor": 299.90,
+            "total": 0
+        }
+    ]
+}
