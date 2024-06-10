@@ -167,3 +167,136 @@ th {
 .invisivel{
     display: none;
 }
+
+/* Estilos para o rodapé */
+footer {
+    background-color: #00173D;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .footer-logo img {
+    margin-bottom: 20px;
+}
+
+footer .footer-links, 
+footer .footer-contact, 
+footer .footer-social {
+    margin-bottom: 20px;
+}
+
+footer .footer-links p,
+footer .footer-contact p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #FFCC00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer .footer-social a {
+    margin: 0 10px;
+}
+
+footer .footer-social img {
+    transition: transform 0.3s;
+}
+
+footer .footer-social img:hover {
+    transform: scale(1.2);
+}
+
+footer p {
+    margin: 10px 10px;
+}
+
+@media (min-width: 768px) {
+    footer .footer-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    footer .footer-logo, 
+    footer .footer-links, 
+    footer .footer-contact, 
+    footer .footer-social {
+        flex: 1;
+        max-width: 250px;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+}
+
+/* Estilos para o botão de adicionar encomenda */
+#adicionar-encomenda {
+    background-color: #00173D; /* Azul escuro */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block; /* Para centralização */
+    font-size: 16px;
+    margin: 20px auto; /* Centraliza o botão horizontalmente */
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#adicionar-encomenda:hover {
+    background-color: #00378f;
+    transform: scale(1.05);
+}
+
+#adicionar-encomenda:active {
+    background-color: #00173D;
+    transform: scale(1.02);
+}
+
+/* Estilos para o botão de buscar encomendas */
+#buscar-encomendas {
+    background-color: #00173D; /* Azul escuro */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block; /* Para centralização */
+    font-size: 16px;
+    margin: 20px auto; /* Centraliza o botão horizontalmente */
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#buscar-encomendas:hover {
+    background-color: #00378f;
+    transform: scale(1.05);
+}
+
+#buscar-encomendas:active {
+    background-color: #00173D;
+    transform: scale(1.02);
+}

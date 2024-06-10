@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    
     <title>Cloud Games</title>
 </head>
-
 <body>
     <header>
         <div class="topo">
@@ -17,7 +15,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#encomendas">Encomendas</a></li>
                     <li><a href="#info-empresa">Sobre</a></li>
-                    <li><a href="contact.html">Contato</a></li>
+                    <li><a href="#footer">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -32,50 +30,26 @@
                 <label for="filtrar-table">Filtrar:</label>
                 <input type="text" name="filtro" id="filtrar-table" placeholder="Digite o nome do cliente:"> 
                 <table>
-                <tr>
-                    <th>Nome</th>
-                    <th>Jogo</th>
-                    <th>Plataforma</th>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                    <th>Total</th>
-                </tr>
-                <tr class="linhas">
-                    <td class="info-nome">Kauan</td>
-                    <td class="info-jogo">The Legend of Zelda: Breath of the Wild</td>
-                    <td class="info-plataforma">Nintendo Switch</td>
-                    <td class="info-qtd">2</td>
-                    <td class="info-valor">299,90</td>
-                    <td class="info-total">-</td>
-                </tr>
-                <tr class="linhas">
-                    <td class="info-nome">Pedro</td>
-                    <td class="info-jogo">The Last of Us Part II</td>
-                    <td class="info-plataforma">PlayStation 4</td>
-                    <td class="info-qtd">3</td>
-                    <td class="info-valor">249,90</td>
-                    <td class="info-total">-</td>
-                </tr>
-                <tr class="linhas">
-                    <td class="info-nome">Richard</td>
-                    <td class="info-jogo">Red Dead Redemption 2</td>
-                    <td class="info-plataforma">Xbox One</td>
-                    <td class="info-qtd">2</td>
-                    <td class="info-valor">-</td>
-                    <td class="info-total">-</td>
-                </tr>
-                <tr class="linhas">
-                    <td class="info-nome">Igor</td>
-                    <td class="info-jogo">Grand Theft Auto V</td>
-                    <td class="info-plataforma">PlayStation 4</td>
-                    <td class="info-qtd">-</td>
-                    <td class="info-valor">149,90</td>
-                    <td class="info-total">-</td>
-                </tr>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Jogo</th>
+                            <th>Plataforma</th>
+                            <th>Quantidade</th>
+                            <th>Preço</th>
+                            <th>Total</th>
+                            <th>Nota OpenCritic</th> <!-- Nova coluna -->
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-encomendas">
+                    </tbody>
                 </table>
             </div>
         </section>
-
+        
+        <section class="container">
+            <button id="buscar-encomendas">Buscar Encomendas</button>
+        </section>
         <section class="container">
             <div class="table-container">
                 <hr>
@@ -116,7 +90,19 @@
                                 <option value="The Last of Us Part II">The Last of Us Part II</option>
                                 <option value="Red Dead Redemption 2">Red Dead Redemption 2</option>
                                 <option value="Grand Theft Auto V">Grand Theft Auto V</option>
+                                <option value="Cyberpunk 2077">Cyberpunk 2077</option>
+                                <option value="Minecraft">Minecraft</option>
+                                <option value="FIFA 22">FIFA 22</option>
+                                <option value="Animal Crossing: New Horizons">Animal Crossing: New Horizons</option>
+                                <option value="Call of Duty: Modern Warfare">Call of Duty: Modern Warfare</option>
+                                <option value="Super Mario Odyssey">Super Mario Odyssey</option>
+                                <option value="The Witcher 3: Wild Hunt">The Witcher 3: Wild Hunt</option>
+                                <option value="Horizon Zero Dawn">Horizon Zero Dawn</option>
+                                <option value="Resident Evil Village">Resident Evil Village</option>
+                                <option value="Halo Infinite">Halo Infinite</option>
+                                <option value="Assassin's Creed Valhalla">Assassin's Creed Valhalla</option>
                             </select>
+                            
                         </div>
 
                         <div class="input-group">
@@ -128,12 +114,30 @@
                 </form>
             </div>
         </section>
-
     </main>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/filtrar.js"></script>
+    <script src="assets/js/buscar-encomendas.js"></script>
     <footer>
-        <!-- Rodapé do site aqui -->
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="assets/img/logo-cloud-games.png" alt="logo" width="150px">
+            </div>
+            <div class="footer-links">
+                <p><a href="privacy.html">Política de Privacidade</a> | <a href="terms.html">Termos de Uso</a></p>
+                <p><a href="index.html">Home</a> | <a href="#encomendas">Encomendas</a> | <a href="#info-empresa">Sobre</a> | <a href="#footer">Contato</a></p>
+            </div>
+            <div class="footer-contact">
+                <p>Endereço: Rua dos Games, 123, São Paulo - SP, 01234-567</p>
+                <p>Telefone: (11) 1234-5678 | Email: contato@cloudgames.com</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="assets/img/facebook.png" alt="Facebook" width="30px"></a>
+                <a href="#"><img src="assets/img/twitter.png" alt="Twitter" width="30px"></a>
+                <a href="#"><img src="assets/img/instagram.png" alt="Instagram" width="30px"></a>
+            </div>
+            <p>&copy; 2024 Cloud Games. Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
